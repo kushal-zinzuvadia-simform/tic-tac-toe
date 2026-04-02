@@ -9,6 +9,8 @@ function resetGrid() {
     current = "X";
     gridItem.forEach(element => {
         element.innerText = "";
+        element.classList.remove('win');
+        element.classList.add('enabled-hover');
     });
 
     instr.innerText = "X's turn";
@@ -49,6 +51,12 @@ function checkGrid() {
 
         if (valA !== "" && valA === valB && valB === valC) {
             instr.innerText = valA + " wins!";
+            gridItem[a].classList.add('win');
+            gridItem[c].classList.add('win');
+            gridItem[b].classList.add('win');
+            gridItem[a].classList.remove('enabled-hover');
+            gridItem[b].classList.remove('enabled-hover');
+            gridItem[c].classList.remove('enabled-hover');
             return true;
         }
     }

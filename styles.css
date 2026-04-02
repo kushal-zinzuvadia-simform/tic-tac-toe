@@ -25,6 +25,7 @@ body {
 .game-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     width: 12rem;
     height: 12rem;
 }
@@ -39,14 +40,18 @@ body {
     transition: background 0.2s ease;
 }
 
-.grid-item:hover {
+.grid-item.enabled-hover:hover {
     background-color: #eaeaea;
 }
 
-.grid-item:active {
+.grid-item.enabled-hover:active {
     background-color: #ddd;
 }
 
 .reset {
     padding: 0.5rem;
+}
+
+.win {
+    background-color: lightgreen;
 }
